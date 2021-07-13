@@ -1,0 +1,53 @@
+.book-list{
+  border: solid 1px white;
+  border-radius: 5px;
+  padding: 22px;
+  margin-top: 40px;
+  .book-item{
+    display: flex;
+    border-bottom: solid 1px;
+    padding: 17px 0px;
+    &:last-child{
+      border-bottom: 0px;
+    }
+    .cell{
+      flex-grow: 1;
+      width: 20%;
+      text-align: left;
+      font-size: 18px;
+      font-weight: 400;
+      color: #53ba94;
+      &.actions{
+        text-align: right;
+        .btns{
+          background-color: #2ddca3;
+          width: 30px;
+          height: 30px;
+          margin: 5px;
+          display: inline-block;
+          border: solid 1px;
+          border-radius: 50%;
+          cursor: pointer;
+          &.up{
+            background-image: url('./../../../assets/images/arrow.svg');
+          }
+          &.down{
+            background-image: url('./../../../assets/images/arrow.svg');
+            transform: rotate(180deg);
+          }
+          &.delete{
+            background-image: url('./../../../assets/images/delete.svg');
+          }
+        }
+      }
+    }
+    &.header{
+      .cell{
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+
+}

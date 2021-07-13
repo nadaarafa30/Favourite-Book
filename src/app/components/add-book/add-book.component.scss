@@ -1,0 +1,51 @@
+.add-books-wrapper{
+  margin-top: 45px;
+  .mr-1{
+    margin-right: 10px;
+  }
+  .actions{
+    margin-bottom: 27px;
+    text-align: right;
+    button{
+      margin: 20px;
+      &.add{
+        color: #ccefcc;
+        border-color: #b7eab7;
+        &:hover{
+          color: #fff !important;
+          background-color: #426942;
+        }
+      }
+      &.delete{
+        color: #ffafaf;
+        border-color: #ffa6a6;
+        &:hover{
+          color: #fff !important;
+          background-color: #e66666;
+        }
+      }
+      &:focus,&:active{
+        outline: none;
+        background-color: transparent;
+        box-shadow:none;
+      }
+    }
+  }
+
+  .addForm{
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+    .form{
+      display: none;
+    }
+    &.showAnimi{
+      visibility: visible;
+      opacity: 1;
+      .form{
+        display: block;
+      }
+    }
+  }
+}
+

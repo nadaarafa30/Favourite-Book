@@ -1,0 +1,21 @@
+<div class="book-list" *ngIf="books?.length > 0 ">
+  <div class="book-item header">
+    <span class="cell">Book Title</span>
+    <span class="cell">Year</span>
+    <span class="cell">Author Name</span>
+    <span class="cell actions">Actions</span>
+    </div>
+   <div *ngFor="let book of books ;let i=index" class="book-item">
+   <span class="cell">{{book.book_title}}</span>
+   <span class="cell">{{book.year}}</span>
+   <span class="cell">{{book.author_name}}</span>
+   <span class="cell actions">
+      <span class="btns up" *ngIf="i > 0" (click)="swapBook(i,i-1)"></span>
+      <span class="btns down" *ngIf="i < books?.length-1" (click)="swapBook(i,i+1)"></span>
+      <span class="btns delete" (click)="removeBookItem(book)"></span>
+   </span>
+   </div>
+</div>
+<div class="book-list" *ngIf="books?.length < 1 " >
+    <h4 class="center">Please Insert Your favorit Books</h4>
+</div>

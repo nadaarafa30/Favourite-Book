@@ -1,0 +1,45 @@
+<div class="add-books-wrapper">
+  <div class="actions">
+    <button type="button" class="btn btn-outline-primary add" data-bs-toggle="collapse" href="#collapseExample" (click)="isCollapsed=!isCollapsed;onReset()" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample">
+      Add New Book
+    </button>
+    <button type="button" class="btn btn-outline-primary delete" (click)="resetFavoritList()" >
+     Reset Favorit List
+  </button>
+  </div>
+  <div class="addForm" [ngClass]="{'showAnimi':isCollapsed}">
+    <div class="form">
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group col-5">
+            <label>Book Title</label>
+            <input type="text" formControlName="book_title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.book_title.errors }" />
+            <div *ngIf="submitted && f.book_title.errors" class="invalid-feedback">
+                <div *ngIf="f.book_title.errors.required">Book title is required</div>
+            </div>
+        </div>
+        <div class="form-group col-5">
+          <label> Author Name</label>
+          <input type="text" formControlName="author_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.author_name.errors }" />
+          <div *ngIf="submitted && f.author_name.errors" class="invalid-feedback">
+              <div *ngIf="f.author_name.errors.required">Author Name is required</div>
+          </div>
+      </div>
+      <div class="form-group col-5">
+        <label>Year</label>
+        <input type="text" formControlName="year" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.year.errors }" />
+        <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+            <div *ngIf="f.year.errors.required">Year is required</div>
+        </div>
+        </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mr-1">Add</button>
+          <button class="btn btn-secondary" type="reset" (click)="onReset();isCollapsed=!isCollapsed">Cancel</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+

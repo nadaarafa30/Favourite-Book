@@ -1,0 +1,5 @@
+<div class="home-wrapper">
+  <header class="title"> List of My favorit Books </header>
+  <app-add-book (resetBooks)="resetAll($event)" (addBooks)="addBook($event)"></app-add-book>
+  <app-book-listing [books]="listBooks" (removeBook)="removeBook($event)" (swapBooks)="swapBooks($event)"></app-book-listing>
+</div>
